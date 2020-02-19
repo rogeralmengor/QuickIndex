@@ -206,7 +206,7 @@ class QuickIndex(object):
 				self.genAllGreenNir(self.green, self.nir, self.kwargs)
 				self.genAllGreenSwir(self.green, self.swir, self.kwargs)
 			else:
-				print("Error")
+				print "Error"
 
 		elif red is not None and nir is not None and swir is not None:
 			with rasterio.open(red) as src_red:
@@ -230,7 +230,7 @@ class QuickIndex(object):
 					if idx == 'slavi':
 						self.slavi(self.red, self.nir, self.swir, self.kwargs)
 					else:
-						print("Error: Index [" + idx + "] doesnt exist")
+						print "Error: Index [" + idx + "] doesnt exist"
 
 		elif green is not None and nir is not None:
 			with rasterio.open(green) as src_green:
@@ -253,7 +253,7 @@ class QuickIndex(object):
 					elif idx == 'ndwi':
 						self.ndwi(self.green, self.nir, self.kwargs)
 					else:
-						print("Error: Index [" + idx + "] doesnt exist")
+						print "Error: Index [" + idx + "] doesnt exist"
 
 
 		elif green is not None and swir is not None:
@@ -275,7 +275,7 @@ class QuickIndex(object):
 					if idx == 'mndwi':
 						self.mndwi(self.green, self.swir, self.kwargs)
 					else:
-						print("Error: Index [" + idx + "] doesnt exist")
+						print "Error: Index [" + idx + "] doesnt exist"
 
 
 		elif red is not None and nir is not None:
@@ -321,10 +321,10 @@ class QuickIndex(object):
 					elif idx == 'ctvi':
 						self.msavi2(self.red, self.nir, self.kwargs)																		
 					else:
-						print("Error: Index [" + idx + "] cant be created")
+						print "Error: Index [" + idx + "] cant be created"
 						print_one = "Try one of these: sr, ndvi, rvi, tvi, ttvi, nrvi,"
 						print_two = " savi, msavi, msavi2, gemi, dvi, wdvi or ctvi"
-						print(print_one + print_two)
+						print print_one + print_two
 
 		elif nir is not None and swir is not None:
 			with rasterio.open(nir) as src_nir:
@@ -342,10 +342,10 @@ class QuickIndex(object):
 					if idx == 'ndwi2':
 						self.ndwi2(self.nir, self.swir, self.kwargs)
 					else:
-						print("Error: Index [" + idx + "] cant be created")
+						print "Error: Index [" + idx + "] cant be created"
 		else:
-			print("------------- [ Welcome to QuickIndex ] -------------")
-			print()
+			print "------------- [ Welcome to QuickIndex ] -------------"
+			print
 
 # UNIX
 # green_file = '/home/eduardo/Documents/images/LT05_L1TP_217076_20110813_20161007_01_T1_B2.TIF'
